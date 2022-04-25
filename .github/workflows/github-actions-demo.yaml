@@ -24,6 +24,10 @@ jobs:
           wait: 1m
       - name: Testing
         run: kubectl cluster-info
-      - run: kubectl get pods -n kube-system
+      - name: Show Pods
+        run: kubectl get pods -n kube-system
+      - run: sleep 15s
+      - name: Show Pods again
+        run: kubectl get pods -n kube-system
       - run: echo "current-context:" $(kubectl config current-context)
       - run: echo "environment-kubeconfig:" ${KUBECONFIG}
