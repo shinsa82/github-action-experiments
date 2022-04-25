@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: engineerd/setup-kind@v0.5.0
         with:
+          name: experiment
           wait: 30s
           config: kind-config.yaml
       - name: Testing
