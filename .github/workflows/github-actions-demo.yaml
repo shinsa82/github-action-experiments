@@ -42,6 +42,8 @@ jobs:
       - uses: WyriHaximus/github-action-helm3@v2
         with:
           exec: helm version
+      - run: kubectl get all -A
+      - run: helm list
   python-quickstart:
     runs-on: ubuntu-latest
     steps:
