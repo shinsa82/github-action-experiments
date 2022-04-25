@@ -21,10 +21,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: engineerd/setup-kind@v0.5.0
         with:
-          wait: 15m
+          wait: 1m
       - name: Testing
-        run: |
-          kubectl cluster-info
-          kubectl get pods -n kube-system
-          echo "current-context:" $(kubectl config current-context)
-          echo "environment-kubeconfig:" ${KUBECONFIG}
+        run: kubectl cluster-info
+      - run: kubectl get pods -n kube-system
+      - run: echo "current-context:" $(kubectl config current-context)
+      - run: echo "environment-kubeconfig:" ${KUBECONFIG}
