@@ -31,6 +31,12 @@ jobs:
         run: kubectl get pods -n kube-system
       - run: echo "current-context:" $(kubectl config current-context)
       - run: echo "environment-kubeconfig:" ${KUBECONFIG}
+  helm-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: WyriHaximus/github-action-helm3@v2
+        with:
+          exec: helm version
   python-quickstart:
     runs-on: ubuntu-latest
     steps:
