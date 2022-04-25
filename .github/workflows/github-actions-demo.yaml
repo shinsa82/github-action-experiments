@@ -31,3 +31,10 @@ jobs:
         run: kubectl get pods -n kube-system
       - run: echo "current-context:" $(kubectl config current-context)
       - run: echo "environment-kubeconfig:" ${KUBECONFIG}
+  python-quickstart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.10.4'
+      - run: "python -V"
