@@ -1,0 +1,15 @@
+apiVersion: acid.zalan.do/v1
+kind: postgresql
+metadata:
+  name: sample-postgres-db
+  namespace: default
+spec:
+  teamId: sample-postgres
+  volume:
+    size: 256M
+  numberOfInstances: 3
+  users: {}
+  databases: {}
+  preparedDatabases: {}
+  postgresql:
+    version: "13"
