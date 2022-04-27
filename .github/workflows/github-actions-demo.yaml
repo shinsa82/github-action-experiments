@@ -59,3 +59,17 @@ jobs:
         with:
           python-version: "3.10.4"
       - run: "python -V"
+  postgres-operator-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: engineerd/setup-kind@v0.5.0
+        with:
+          name: posgre
+          wait: 15s
+      - uses: GuillaumeFalourd/clone-github-repo-action@v2
+        with:
+          owner: zalando
+          repository: postgres-operator
+      - run: cd postgres-operator
+      - run: ls
+      # - helm install postgres-operator ${TEMP_DIR}/charts/postgres-operator
