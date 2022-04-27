@@ -66,12 +66,11 @@ jobs:
         with:
           name: posgre
           wait: 15s
+      - run: kubectl cluster-info --context kind-posgre
       - uses: GuillaumeFalourd/clone-github-repo-action@v2
         with:
           owner: zalando
           repository: postgres-operator
-      - run: cd postgres-operator
-      - run: ls
       - uses: WyriHaximus/github-action-helm3@v2
         with:
           exec: |
