@@ -74,6 +74,6 @@ jobs:
       - uses: WyriHaximus/github-action-helm3@v2
         with:
           exec: |
+            kubectl config use-context kind-posgre
             helm install postgres-operator postgres-operator/charts/postgres-operator
             helm list
-          kubeconfig: ${{ secrets.KUBECONFIG }}
