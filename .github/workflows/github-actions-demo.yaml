@@ -76,3 +76,4 @@ jobs:
           exec: |
             helm install postgres-operator postgres-operator/charts/postgres-operator
             helm list
+          kubeconfig: ${{ secrets.KUBECONFIG }}
