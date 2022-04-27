@@ -72,4 +72,8 @@ jobs:
           repository: postgres-operator
       - run: cd postgres-operator
       - run: ls
-      # - helm install postgres-operator ${TEMP_DIR}/charts/postgres-operator
+      - uses: WyriHaximus/github-action-helm3@v2
+        with:
+          exec: |
+            helm install postgres-operator postgres-operator/charts/postgres-operator
+            helm list
