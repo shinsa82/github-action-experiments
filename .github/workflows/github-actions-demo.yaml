@@ -44,6 +44,14 @@ jobs:
           exec: helm version
       - run: kubectl get all -A
       - run: helm list
+  clone-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GuillaumeFalourd/clone-github-repo-action@v2
+        with:
+          owner: zalando
+          repository: postgres-operator
+      - run: ls postgres-operator
   python-quickstart:
     runs-on: ubuntu-latest
     steps:
