@@ -73,3 +73,5 @@ jobs:
       - run: |
           helm install postgres-operator postgres-operator/charts/postgres-operator
           helm list
+      - name: Show Pods of the installed Opertor
+        run: kubectl --namespace=default get pods -l "app.kubernetes.io/name=postgres-operator"
