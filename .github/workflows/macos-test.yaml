@@ -2,7 +2,10 @@ name: macOS Runner Tests
 on: [push]
 jobs:
   Command-Test:
-    runs-on: macos-12
+    strategy:
+      matrix:
+        version: [macos-12, macos-11, macos-10.15]
+    runs-on: ${{ matrix.version }}
     steps:
       - run: python -V
       - run: python3 -V
