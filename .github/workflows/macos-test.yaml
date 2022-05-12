@@ -5,3 +5,4 @@ jobs:
     runs-on: macos-12
     steps:
       - run: python -V
+      - run: python3 -V
