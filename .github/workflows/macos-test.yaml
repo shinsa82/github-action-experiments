@@ -1,0 +1,7 @@
+name: macOS Runner Tests
+on: [push]
+jobs:
+  Command-Test:
+    runs-on: macos-12
+    steps:
+      - run: python -V
